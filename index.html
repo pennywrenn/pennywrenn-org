@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penny Wrenn Consulting — Content Strategy · SEM · Civic Communications</title>
+  <meta name="description" content="Content strategy, SEM, civic communications, and Computational Authorship as a service framework. Health-tech experience via TeamTioga.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #faf6ed;
+      --paper-dark: #f2ece0;
+      --ink: #1a1209;
+      --ink-mid: #3d2e1a;
+      --ink-light: #6b5a44;
+      --gold: #c8a96e;
+      --gold-dark: #8b6914;
+      --rule: rgba(139,105,20,0.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      line-height: 1.7;
+    }
+
+    .masthead {
+      background: var(--paper-dark);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.6rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .masthead-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    header {
+      padding: 3rem 2rem 2.5rem;
+      border-bottom: 4px double var(--ink);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .header-eyebrow {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .header-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .header-name .consulting {
+      font-weight: 400;
+      font-style: italic;
+      display: block;
+      font-size: 0.55em;
+      letter-spacing: 0;
+    }
+
+    .header-services {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: var(--ink-light);
+      margin-top: 0.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .kicker {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    /* PROPOSITION */
+    .proposition {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .proposition h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .proposition p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      margin-bottom: 1rem;
+    }
+
+    .proposition p.lead {
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 0.8;
+      float: left;
+      margin: 0.1rem 0.15rem 0 0;
+      color: var(--ink);
+    }
+
+    .prop-sidebar {
+      border-left: 1px solid var(--rule);
+      padding-left: 3rem;
+    }
+
+    .sidebar-box {
+      background: var(--paper-dark);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--gold);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-box h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .sidebar-box ul {
+      padding-left: 1.2rem;
+    }
+
+    .sidebar-box li {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--ink-mid);
+      margin-bottom: 0.4rem;
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .services h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--gold);
+      padding: 1.75rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--ink-mid);
+    }
+
+    /* COMPUTATIONAL AUTHORSHIP */
+    .comp-auth {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 4rem 2rem;
+    }
+
+    .comp-auth-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .comp-auth .kicker {
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .comp-auth h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .comp-auth p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(250,246,237,0.8);
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+
+    .comp-auth p.emphasis {
+      color: var(--paper);
+      font-weight: 700;
+    }
+
+    /* TEAMTIOGA */
+    .teamtioga {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .teamtioga h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .teamtioga p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: var(--paper-dark);
+      border-top: 4px double var(--ink);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-copy {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--ink-light);
+      line-height: 2;
+    }
+
+    @media (max-width: 768px) {
+      .proposition { grid-template-columns: 1fr; gap: 2rem; }
+      .prop-sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="masthead">
+    <span class="masthead-label">Consulting · Strategy · Communications</span>
+    <span class="masthead-label">pennywrenn.blog</span>
+  </div>
+
+  <header>
+    <div class="header-eyebrow">Penny Wrenn</div>
+    <div class="header-name">
+      Consulting
+      <span class="consulting">Content Strategy · SEM · Civic Communications · Editorial</span>
+    </div>
+    <div class="header-services">
+      Computational Authorship · Keyword Projection · Health-Tech Experience · TeamTioga
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="proposition">
+        <div class="prop-text">
+          <div class="kicker">The Practice</div>
+          <h2>The Same Intelligence That Writes<br>Civic Journalism Writes Better<br>Content Strategy</h2>
+          <p class="lead drop-cap">Most content consultants know either the marketing mechanics or the editorial quality, and they deliver accordingly. Penny Wrenn works from both ends simultaneously — the SEM infrastructure that makes content findable, and the editorial rigor that makes it worth finding. These are not separate disciplines. They are the same discipline applied at different scales.</p>
+          <p>The practice is built on a decade of search engine marketing, content production, and editorial work across industries — including health technology through TeamTioga, where the stakes of getting information right are immediate and concrete. The same precision that health-tech content demands transfers directly to any communications challenge where accuracy, clarity, and findability all matter at once.</p>
+          <p>The framework is called Computational Authorship: the deliberate use of digital tools and data to produce content that is genuinely authored — not generated, not templated, not optimized within an inch of its life. Content that a human being wrote, with a human being's understanding of what another human being actually needs.</p>
+        </div>
+        <div class="prop-sidebar">
+          <div class="sidebar-box">
+            <h4>Services</h4>
+            <ul>
+              <li>Content strategy and architecture</li>
+              <li>Search engine marketing (SEM)</li>
+              <li>Keyword projection frameworks</li>
+              <li>Civic communications consulting</li>
+              <li>Editorial direction and oversight</li>
+              <li>Computational Authorship audits</li>
+              <li>Health-tech content strategy</li>
+            </ul>
+          </div>
+          <div class="sidebar-box" style="border-top-color:var(--ink);">
+            <h4>Background</h4>
+            <ul>
+              <li>TeamTioga — health technology</li>
+              <li>O, The Oprah Magazine (2014)</li>
+              <li>Essence · Esquire</li>
+              <li>Power 2026 · America 250</li>
+              <li>SEM / content marketing — 10+ years</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="kicker">Service Areas</div>
+        <h2>What the Practice Delivers</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Content Strategy</h3>
+            <p>Architecture for content systems that serve both the organization's goals and the human beings trying to find the information they need. Built to last, not to game the algorithm.</p>
+          </div>
+          <div class="service-card">
+            <h3>Search Engine Marketing</h3>
+            <p>SEM as infrastructure, not performance. The goal is not a spike — it is a durable, growing presence for the ideas and offerings that deserve to be found.</p>
+          </div>
+          <div class="service-card">
+            <h3>Civic Communications</h3>
+            <p>Communications strategy for organizations and causes that need to be heard in a crowded, skeptical civic environment. The work of earning attention rather than buying it.</p>
+          </div>
+          <div class="service-card">
+            <h3>Editorial Direction</h3>
+            <p>The judgment call that determines whether a piece of content is worth publishing. What to say, how to say it, why it matters, and what it will accomplish in the world.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="teamtioga">
+        <div class="kicker">Health-Tech Experience</div>
+        <h2>TeamTioga: Where Content Precision<br>Was Not Optional</h2>
+        <p>Health technology is a sector where content inaccuracy has direct human consequences. The experience of producing content strategy for health-tech through TeamTioga — navigating the intersection of medical accuracy, regulatory requirements, patient literacy, and digital findability — is a master class in the disciplines that matter in every content environment.</p>
+        <p>The standards that health-tech demands — verify everything, simplify without distorting, reach the audience that needs the information, not just the audience that's easy to reach — are the standards that distinguish good content strategy from the kind that fills space without accomplishing anything.</p>
+      </div>
+
+    </div>
+
+    <div class="comp-auth">
+      <div class="comp-auth-inner">
+        <p class="kicker">Computational Authorship</p>
+        <h2>"The most powerful content tool is still a human being<br>who understands what another human being needs."</h2>
+        <p>Computational Authorship is the framework for bringing together the scale and precision of digital content production with the irreducible quality of genuine editorial judgment. It is not AI — or rather, it is not AI in the sense of outsourcing the thinking. It is the strategic use of every available tool in service of content that a human being wrote, for a human being who needs it.</p>
+        <p>Natural language is not input. It is testimony. Every search query, every piece of content, every keyword is evidence of something a human being cares about. Computational Authorship treats that evidence with the seriousness it deserves.</p>
+        <p class="emphasis">This is what Penny Wrenn Consulting offers: the intelligence to understand what people actually need, and the craft to provide it at scale.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-name">Penny Wrenn Consulting</div>
+    <div class="footer-copy">
+      © Penny Wrenn · All Rights Reserved · Free to read · Not free to extract<br>
+      pennywrenn.blog · Part of the America 250 editorial framework
+    </div>
+  </footer>
+
+</body>
+</html>
